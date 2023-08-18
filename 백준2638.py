@@ -1,4 +1,3 @@
-#시간초과..
 import sys
 import copy
 from collections import deque
@@ -36,20 +35,19 @@ def find_delete(visited):
     list=[]
     for i in range(N):
         for j in range(M):
-            cnt=0
-            for k in range(4):
-                x=i+dx[k]
-                y=i+dy[k]
-                if(0<=x<N and 0<=y<M and data[x][y]==0 and visited[i][j]==1):
-                    cnt+=1
-            if(cnt>=2):
-                list.append([i,j])
-            visited[i][j]=1
+            if(data[i][j]==1):
+                cnt=0
+                for k in range(4):
+                    x=i+dx[k]
+                    y=j+dy[k]
+                    if(0<=x<N and 0<=y<M and data[x][y]==0 and visited[x][y]==1):
+                        cnt+=1
+                if(cnt>=2):
+                    list.append([i,j])
     return list
 
-check=True
 time=0
-while(check):
+while(True):
     visited=[[0]*M for _ in range(N)]
     for i in range(N):
         for j in range(M):
@@ -60,8 +58,15 @@ while(check):
     
     a=find_delete(visited)
     time+=1
-    if(len(a)==0):
-        check=False
+    
+    if(not a or len(a)==0):
         time-=1
+        break
+
+    for x,y in a:
+        data[x][y]=0
+
+    for i in range(N):
+        print(data[i])
 
 print(time)
