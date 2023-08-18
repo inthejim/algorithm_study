@@ -7,13 +7,6 @@ si=sys.stdin.readline
 N,M=map(int,si().strip().split())
 data=list(list(map(int,si().strip().split())) for _ in range(N))
 
-def find():
-    for i in range(N):
-        for j in range(M):
-            if(data[i][j]==1):
-                return i,j
-    return -1,-1
-
 dx=[1,-1,0,0]
 dy=[0,0,1,-1]
 
