@@ -59,7 +59,4 @@ while(True):
     for x,y in a:
         data[x][y]=0
 
-    for i in range(N):
-        print(data[i])
-
 print(time)
