@@ -26,7 +26,7 @@ dx  =[1,-1,0,0]
 dy = [0,0,1,-1]
 q = deque()
 
-re = 0
+res = 0
 for i in range(n):
     for j in range(m):
         if s[i][j]=='L':
@@ -41,5 +41,5 @@ for i in range(n):
                 if(cnt>2):
                     break
             if(cnt<=2):
-                res = max(re,bfs(i,j))
+                res = max(res,bfs(i,j))
 print(res)
