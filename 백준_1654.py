@@ -11,7 +11,7 @@ while(start<end):
     for line in lines:
         count+=line//mid
     
-    if count>=n:
+    if count>=k:
         start=mid+1
     else:
         end=mid-1
