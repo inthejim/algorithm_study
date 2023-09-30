@@ -1,0 +1,8 @@
+class Solution:
+    def findTheCity(self, n: int, edges: List[List[int]], distanceThreshold: int) -> int:
+        graph=[[] for _ in range(n)]
+        for i in range(n):
+            a,b,c=edges[i]
+            graph[a].append((b,c))
+            graph[b].append((a,c))
+
