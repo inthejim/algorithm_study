@@ -31,7 +31,7 @@ def bfs(i,j):
                 nx=0
             elif nx==-1:
                 nx=n-1
-            if ny==n:
+            if ny==m:
                 ny=0
             elif ny==-1:
                 ny=m-1
@@ -42,8 +42,8 @@ for i in range(n):
     for j in range(m):
         bfs(i,j)
 
-for k in range(len(data2)):
-    if data2[k] in dict:
-        print(dict[data2[k]])
+for k in data2:
+    if k in dict:
+        print(dict[k])
     else:
         print(0)
